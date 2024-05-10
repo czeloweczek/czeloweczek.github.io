@@ -1,0 +1,38 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+// Стили для h1
+h1 {
+  color: #333;
+  text-align: center;
+}
+
+// Стили для h2
+h2 {
+  color: #666;
+  margin-top: 30px;
+}
+
+// Стили для p
+p {
+  line-height: 1.5;
+}
+
+// Стили для ul
+ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+// Стили для table
+table {
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+// Стили для th и td
+th, td {
+  border: 1px solid #ccc;
+  padding: 8px;
+}

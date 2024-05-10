@@ -1,0 +1,52 @@
+$primary-color: #ff0000;
+$secondary-color: #cc0000;
+$text-color: #666;
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  min-height: 100vh; /* Добавляем минимальную высоту, чтобы учесть случай, когда контента на странице меньше, чем высота окна просмотра */
+  display: flex;
+  flex-direction: column; /* Устанавливаем направление столбца для flex-контейнера */
+}
+
+h1 {
+  color: #333;
+  text-align: center;
+}
+
+p {
+  color: $text-color;
+  line-height: 1.5;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 20px;
+  flex: 1; /* Занимаем все доступное пространство между header и footer */
+}
+
+.job-description {
+  margin-top: 30px;
+}
+
+.apply-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: $primary-color;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: $secondary-color;
+  }
+}
+
+footer {
+  margin-top: auto;
+  background-color: #f5f5f5;
+  padding: 20px;
+}
