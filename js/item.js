@@ -20,25 +20,28 @@ function createProductItems() {
 
     var imgElement = document.createElement("img");
     imgElement.src = decodeURIComponent(params.img);
-    imgElement.title = decodeURIComponent(params.title); // Добавление атрибута title
     itemElement.appendChild(imgElement);
 
     var productTextElement = document.createElement("div"); // Контейнер для всех надписей
     productTextElement.className = "product-text";
 
-    var titleElement = document.createElement("h2");
-    titleElement.textContent = decodeURIComponent(params.title);
-    productTextElement.appendChild(titleElement);
+    var nameElement = document.createElement("h2");
+    nameElement.textContent = decodeURIComponent(params.name);
+    productTextElement.appendChild(nameElement);
 
     var priceElement = document.createElement("p");
     priceElement.className = "price";
-    priceElement.textContent = "Цена: " + decodeURIComponent(params.price);
+    priceElement.textContent = "Цена: " + decodeURIComponent(params.price); 
     productTextElement.appendChild(priceElement);
 
     var discountPriceElement = document.createElement("p");
     discountPriceElement.className = "discount-price";
     discountPriceElement.textContent = "Цена со скидкой: " + decodeURIComponent(params.discountPrice);
     productTextElement.appendChild(discountPriceElement);
+
+    var titleElement = document.createElement("p");
+    titleElement.textContent = decodeURIComponent(params.title);
+    productTextElement.appendChild(titleElement);
 
     itemElement.appendChild(productTextElement);
 

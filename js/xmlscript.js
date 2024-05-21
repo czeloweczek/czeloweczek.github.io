@@ -6,12 +6,12 @@ function loadXMLData() {
       parseXMLData(this);
     }
   };
-  xhttp.open("GET", "mmm.xml", true); // Замените "catalog.xml" на путь к вашему XML-файлу
+  xhttp.open("GET", "mmm.xml", true); 
   xhttp.send();
 }
 
 // Обработка данных из XML
-function parseXMLData(xml) {
+function parseXMLData(xml) { 
   var xmlDoc = xml.responseXML;
   var items = xmlDoc.getElementsByTagName("item");
 
@@ -22,8 +22,8 @@ function parseXMLData(xml) {
       var item = items[i];
       var imgElement = item.getElementsByTagName("img")[0];
       var imgSrc = imgElement && imgElement.textContent;
-      var nameElement = item.getElementsByTagName("name")[0];
-      var title = nameElement && nameElement.textContent;
+      var name = item.getElementsByTagName("name")[0].textContent;
+      var title = item.getElementsByTagName("title")[0].textContent; // Добавлено
       var price = item.getElementsByTagName("price")[0].textContent;
       var discountPrice = item.getElementsByTagName("discount-price")[0].textContent;
 
@@ -34,9 +34,9 @@ function parseXMLData(xml) {
       imgElement.src = imgSrc;
       itemElement.appendChild(imgElement);
 
-      var titleElement = document.createElement("h2");
-      titleElement.textContent = title;
-      itemElement.appendChild(titleElement);
+      var nameElement = document.createElement("h2");
+      nameElement.textContent = name;
+      itemElement.appendChild(nameElement);
 
       var priceElement = document.createElement("p");
       priceElement.className = "price";
@@ -50,7 +50,7 @@ function parseXMLData(xml) {
 
       itemElement.addEventListener("click", function() {
         // Переход на другую страницу и передача параметров товара через URL
-        var url = "item.html?img=" + encodeURIComponent(imgSrc) + "&title=" + encodeURIComponent(title) + "&price=" + encodeURIComponent(price) + "&discountPrice=" + encodeURIComponent(discountPrice);
+        var url = "item.html?img=" + encodeURIComponent(imgSrc) + "&name=" + encodeURIComponent(name) + "&title=" + encodeURIComponent(title) + "&price=" + encodeURIComponent(price) + "&discountPrice=" + encodeURIComponent(discountPrice);
         window.location.href = url;
       });
 
@@ -58,6 +58,7 @@ function parseXMLData(xml) {
     })();
   }
 }
+
 
 // Загрузка данных при загрузке страницы
 window.onload = function() {
