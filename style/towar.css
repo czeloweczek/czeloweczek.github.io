@@ -45,4 +45,13 @@ body {
 .item p.discount-price {
   color: red;
   font-weight: bold;
+}
+
+@media (max-width: 480px) {
+  .item {
+    width: 300px;
+  }
+  .items-list {
+    margin: 20px 50px 20px 50px;
+  }
 }/*# sourceMappingURL=towar.css.map */
